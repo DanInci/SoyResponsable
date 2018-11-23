@@ -1,4 +1,9 @@
 <resources>
     <string name="app_name">SoyResponsable</string>
-    <string name="title_activity_main">Main</string>
+    <string name="title_profile">Profile</string>
+    <string name="title_statistics">Statistics</string>
+    <string name="title_issue">List issues</string>
+    <string name="title_map">Map view</string>
+    <string name="title_activity_main">MainActivity</string>
+
 </resources>
