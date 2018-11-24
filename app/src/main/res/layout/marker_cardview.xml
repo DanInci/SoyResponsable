@@ -1,0 +1,116 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:padding="10dp"
+    android:layout_width="match_parent"
+    android:layout_height="150dp"
+    android:layout_margin="8dp"
+    android:background="@drawable/issue_card_view"
+    android:orientation="horizontal">
+
+    <ImageView
+        android:id="@+id/imageIssue"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:layout_margin="5dp"
+        android:src="@drawable/logo"
+        />
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent">
+        <TextView
+            android:id="@+id/titleIssue"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            android:hint="Title"
+            android:textAlignment="center"
+            android:layout_margin="5dp"
+            android:textColor="@color/colorPrimaryDark"
+            android:padding="5dp"/>
+        <TextView
+            android:id="@+id/descriptionIssue"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Description"
+            android:textColor="@color/colorPrimary"
+            android:textSize="10sp"
+            android:layout_margin="5dp"
+            android:padding="5dp"
+            android:layout_below="@id/titleIssue"/>
+
+        <ImageView
+            android:id="@+id/thumbsUpIssue"
+            android:layout_below="@id/upVotes"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:padding="3dp"
+            android:src="@drawable/thumbs_up"
+            android:layout_marginLeft="65dp"/>
+
+        <TextView
+            android:id="@+id/upVotes"
+            android:layout_marginTop="8dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="50dp"
+            android:layout_below="@id/descriptionIssue"
+            android:text="@string/up_votes"
+            android:textSize="8sp"/>
+
+        <TextView
+            android:id="@+id/thumbsUpIssueTxt"
+            android:layout_alignBottom="@id/upVotes"
+            android:layout_marginTop="15dp"
+            android:layout_toRightOf="@id/upVotes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="100"
+            android:layout_marginLeft="5dp"
+            android:textSize="8sp"/>
+
+        <ImageView
+            android:id="@+id/thumbsDownIssue"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginLeft="90dp"
+            android:padding="3dp"
+            android:src="@drawable/thumbs_down"
+            android:layout_below="@id/downVotes"
+            android:layout_toRightOf="@id/thumbsUpIssue" />
+
+        <TextView
+            android:id="@+id/downVotes"
+            android:layout_marginTop="8dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="50dp"
+            android:layout_below="@id/descriptionIssue"
+            android:layout_toRightOf="@+id/thumbsUpIssueTxt"
+            android:text="@string/down_votes"
+            android:textSize="8sp"/>
+
+        <TextView
+            android:id="@+id/thumbsDownIssueTxt"
+            android:layout_alignBottom="@id/upVotes"
+            android:layout_marginTop="10dp"
+            android:layout_toRightOf="@id/downVotes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="101"
+            android:layout_marginLeft="5dp"
+            android:textSize="8sp"/>
+
+        <TextView
+            android:id="@+id/seeMoreDetails"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/thumbsDownIssue"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="5dp"
+            android:text="@string/see_more_details"
+            android:textAlignment="center"
+            android:textColor="@color/colorBlue"
+            android:textSize="8sp" />
+    </RelativeLayout>
+
+</LinearLayout>

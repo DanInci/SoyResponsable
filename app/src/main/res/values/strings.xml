@@ -21,6 +21,9 @@
     <string name="upload">Upload</string>
     <string name="register">Register ?</string>
     <string name="forgot_password">Forgot password ?</string>
+    <string name="see_more_details"><u>See more details...</u></string>
+    <string name="up_votes">Up votes:</string>
+    <string name="down_votes">Down votes:</string>
 
 
 </resources>
