@@ -18,9 +18,27 @@
     <string name="permission_rationale">"Contacts permissions are needed for providing email
         completions."
     </string>
-    <string name="upload">Select</string>
-    <string name="toRegister">Register ?</string>
-    <string name="toLogin">Already have an account ?</string>
+    <string name="upload">Upload</string>
+    <string name="register">Register ?</string>
+    <string name="forgot_password">Forgot password ?</string>
+    <string name="see_more_details"><u>See more details...</u></string>
+    <string name="up_votes">Up votes:</string>
+    <string name="down_votes">Down votes:</string>
+    <string name="comments">Comments:</string>
+    <string name="title">Title</string>
+    <string name="description">Description</string>
+    <string name="image_of_the_issue">Image of the issue</string>
+    <string name="enter_your_comment">Enter your comment...</string>
+    <string name="user">User</string>
+    <string name="multiline_comment_example">Multiline comment example. Multiline comment example. Multiline comment example.Multiline comment example.Multiline comment example.</string>
+    <string name="create_at">24.11.2018</string>
+    <string name="full_name">Full name</string>
+    <string name="email">Email</string>
+    <string name="profile_picture">Profile picture</string>
+    <string name="age">Age</string>
+    <string name="radius">Radius</string>
+    <string name="longitude">Longitude</string>
+    <string name="latitude">Latitude</string>
 
 
 </resources>

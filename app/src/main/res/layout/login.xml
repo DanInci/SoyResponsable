@@ -154,7 +154,7 @@
             android:paddingTop="6dp"
             android:paddingBottom="6dp"
             android:layout_gravity="center"
-            android:text="@string/toRegister" />
+            android:text="Don't have an account?" />
 
     </LinearLayout>
 

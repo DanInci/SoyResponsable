@@ -343,7 +343,7 @@
                 android:paddingBottom="6dp"
                 android:layout_marginBottom="24dp"
                 android:layout_gravity="center"
-                android:text="@string/toLogin" />
+                android:text="Already registered?" />
 
         </LinearLayout>
 </ScrollView>
