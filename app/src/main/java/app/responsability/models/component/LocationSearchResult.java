@@ -1,4 +1,4 @@
-package app.responsability.models;
+package app.responsability.models.component;
 
 import java.util.List;
 

@@ -29,7 +29,7 @@ public class GoogleLocationGeometry {
         this.viewport = viewport;
     }
 
-    private class Location {
+    public class Location {
 
         private Double lat;
 

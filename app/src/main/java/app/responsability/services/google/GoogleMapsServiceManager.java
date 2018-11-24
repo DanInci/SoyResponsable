@@ -2,10 +2,7 @@ package app.responsability.services.google;
 
 import com.google.gson.GsonBuilder;
 
-import java.util.Arrays;
-
-import app.responsability.models.LocationSearchResult;
-import app.responsability.models.component.GoogleLocation;
+import app.responsability.models.component.LocationSearchResult;
 import okhttp3.OkHttpClient;
 import retrofit2.Call;
 import retrofit2.Retrofit;
@@ -29,7 +26,7 @@ public class GoogleMapsServiceManager {
     }
 
     public static Call<LocationSearchResult> findLocationsByName(String name) {
-        return getGoogleMapsService().getLocationGeometry(apiKey, name, "textquery", "name,geometry");
+        return getGoogleMapsService().getLocationGeometry(apiKey, name, "textquery", "ic_name,geometry");
     }
 
 

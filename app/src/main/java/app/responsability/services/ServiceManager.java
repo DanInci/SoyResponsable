@@ -2,6 +2,7 @@ package app.responsability.services;
 
 import com.google.gson.GsonBuilder;
 
+import app.responsability.AppSoyResponsable;
 import okhttp3.Interceptor;
 import okhttp3.OkHttpClient;
 import retrofit2.Retrofit;
@@ -14,18 +15,18 @@ public class ServiceManager {
 
     private static Retrofit retrofit;
 
-    private static String currentUsername;
-    private static String currentPassword;
+    public static String currentEmail;
+    public static String currentPassword;
 
     private static CommentsService commentsService;
     private static IssuesService issuesService;
     private static UsersService usersService;
 
-    public static Retrofit createSession(String username, String password) {
-        currentUsername = username;
+    public static Retrofit createSession(String email, String password) {
+        currentEmail = email;
         currentPassword = password;
 
-        Interceptor interceptor = new AuthInterceptor(username, password);
+        Interceptor interceptor = new AuthInterceptor(email, password);
         OkHttpClient httpClient = new OkHttpClient.Builder().addInterceptor(interceptor).build();
         Retrofit.Builder builder = new Retrofit.Builder()
                 .baseUrl(baseURL)
@@ -41,7 +42,7 @@ public class ServiceManager {
         issuesService = null;
         usersService = null;
 
-        currentUsername = "";
+        currentEmail = "";
         currentPassword = "";
     }
 
@@ -69,7 +70,12 @@ public class ServiceManager {
 
     private static Retrofit getRetrofitClient() {
         if(retrofit == null) {
-
+            OkHttpClient httpClient = new OkHttpClient.Builder().build();
+            Retrofit.Builder builder = new Retrofit.Builder()
+                    .baseUrl(baseURL)
+                    .addConverterFactory(GsonConverterFactory.create(new GsonBuilder().setDateFormat(GSON_SERIALIZER_DATE_FORMAT).create()))
+                    .client(httpClient);
+            retrofit = builder.build();
         }
         return retrofit;
     }

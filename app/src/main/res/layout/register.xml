@@ -1,46 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<ScrollView
+    android:id="@+id/registerFrame"
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".LoginActivity">
-
-    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:fillViewport="true">
+    android:fillViewport="true">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
             android:orientation="vertical">
-
 
             <FrameLayout
                 android:layout_width="match_parent"
-                android:layout_height="180dp"
+                android:layout_height="270dp"
                 android:background="@drawable/blue_bg">
 
-                <ImageView
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
-                    android:layout_gravity="center_horizontal"
-                    android:layout_marginTop="40dp"
-                    android:background="@drawable/blue_border_rounded_cornwe"
-                    android:src="@drawable/avatar" />
 
-                <Button
-                    android:id="@+id/upload"
+                <ImageView
+                    android:id="@+id/profilePic"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="75dp"
+                    android:src="@drawable/ic_avatar" />
+
+                <customfonts.Button_Poppins_Regular
+                    android:id="@+id/uploadProfilePic"
                     android:layout_width="wrap_content"
                     android:layout_height="25dp"
                     android:layout_gravity="center_horizontal"
-                    android:layout_marginTop="105dp"
-                    android:background="@drawable/upload_button"
-                    android:textColor="@color/colorBlue"
+                    android:layout_marginTop="170dp"
+                    android:background="@drawable/btn_reverse_style"
+                    android:textColor="@drawable/btn_reverse_text_color"
                     android:text="@string/upload" />
 
             </FrameLayout>
@@ -55,7 +47,7 @@
 
                 <!-- INPUT -->
                 <customfonts.EditText_Poppins_Regular
-                    android:id="@+id/name_input"
+                    android:id="@+id/etName"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_toRightOf="@id/name_icon"
@@ -66,6 +58,7 @@
                     android:paddingLeft="17dp"
                     android:paddingTop="15dp"
                     android:paddingBottom="15dp"
+                    android:paddingRight="17dp"
                     android:textCursorDrawable="@drawable/cursor_color"
                     android:textSize="12sp" />
 
@@ -76,7 +69,7 @@
                     android:layout_height="10.3dp"
                     android:layout_centerVertical="true"
                     android:layout_marginLeft="17dp"
-                    android:src="@drawable/name" />
+                    android:src="@drawable/ic_name" />
 
             </RelativeLayout>
 
@@ -90,7 +83,7 @@
 
                 <!-- INPUT -->
                 <customfonts.EditText_Poppins_Regular
-                    android:id="@+id/username_input"
+                    android:id="@+id/etEmailReg"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_toRightOf="@id/username_icon"
@@ -101,6 +94,7 @@
                     android:paddingLeft="17dp"
                     android:paddingTop="15dp"
                     android:paddingBottom="15dp"
+                    android:paddingRight="17dp"
                     android:textCursorDrawable="@drawable/cursor_color"
                     android:textSize="12sp" />
 
@@ -111,7 +105,7 @@
                     android:layout_height="10.3dp"
                     android:layout_centerVertical="true"
                     android:layout_marginLeft="17dp"
-                    android:src="@drawable/email" />
+                    android:src="@drawable/ic_email" />
 
             </RelativeLayout>
 
@@ -125,7 +119,44 @@
 
                 <!-- INPUT -->
                 <customfonts.EditText_Poppins_Regular
-                    android:id="@+id/age_input"
+                    android:id="@+id/etPassReg"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/icon"
+                    android:background="@android:color/transparent"
+                    android:hint="Password"
+                    android:inputType="textPassword"
+                    android:maxLength="10"
+                    android:maxLines="1"
+                    android:paddingLeft="17dp"
+                    android:paddingTop="15dp"
+                    android:paddingBottom="15dp"
+                    android:paddingRight="17dp"
+                    android:textCursorDrawable="@drawable/cursor_color"
+                    android:textSize="12sp" />
+
+                <!-- ICON -->
+                <ImageView
+                    android:id="@+id/icon"
+                    android:layout_width="14.7dp"
+                    android:layout_height="10.3dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="17dp"
+                    android:src="@drawable/ic_password" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="62dp"
+                android:layout_marginTop="12.7dp"
+                android:layout_marginRight="62dp"
+                android:background="@drawable/blue_border_rounded_cornwe">
+
+                <!-- INPUT -->
+                <customfonts.EditText_Poppins_Regular
+                    android:id="@+id/etAge"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_toRightOf="@id/age_icon"
@@ -136,6 +167,7 @@
                     android:paddingLeft="17dp"
                     android:paddingTop="15dp"
                     android:paddingBottom="15dp"
+                    android:paddingRight="17dp"
                     android:textCursorDrawable="@drawable/cursor_color"
                     android:textSize="12sp" />
 
@@ -146,7 +178,7 @@
                     android:layout_height="10.3dp"
                     android:layout_centerVertical="true"
                     android:layout_marginLeft="17dp"
-                    android:src="@drawable/long_arrow_pointing_up" />
+                    android:src="@drawable/ic_age" />
 
             </RelativeLayout>
 
@@ -160,26 +192,16 @@
 
                 <!-- INPUT -->
                 <Spinner
-                    android:id="@+id/gender_input"
+                    android:id="@+id/spinnerSex"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_alignParentTop="true"
-                    android:layout_alignParentBottom="true"
-                    android:layout_marginStart="0dp"
-                    android:layout_marginLeft="0dp"
-                    android:layout_marginTop="0dp"
-                    android:layout_marginBottom="0dp"
-                    android:layout_toEndOf="@+id/gender_icon"
-                    android:layout_toRightOf="@+id/gender_icon"
-                    android:background="@color/colorAccent"
-                    android:entries="@array/gender"
-                    android:hint="Age"
-                    android:inputType="number"
                     android:maxLines="1"
-                    android:paddingLeft="17dp"
-                    android:paddingTop="20dp"
-                    android:paddingBottom="40dp"
-                    android:textCursorDrawable="@drawable/cursor_color" />
+                    android:paddingTop="15dp"
+                    android:paddingBottom="15dp"
+                    android:textCursorDrawable="@drawable/cursor_color"
+                    android:popupBackground="@drawable/blue_border_rounded_cornwe"
+                    android:layout_marginLeft="17dp"
+                    android:layout_marginRight="17dp"/>
 
                 <ImageView
                     android:id="@+id/gender_icon"
@@ -187,7 +209,7 @@
                     android:layout_height="10.3dp"
                     android:layout_centerVertical="true"
                     android:layout_marginLeft="17dp"
-                    android:src="@drawable/gender" />
+                    android:src="@drawable/ic_sex" />
 
             </RelativeLayout>
 
@@ -201,18 +223,19 @@
 
                 <!-- INPUT -->
                 <customfonts.EditText_Poppins_Regular
-                    android:id="@+id/radius_input"
+                    android:id="@+id/etRadius"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_toRightOf="@id/radius_icon"
                     android:background="@android:color/transparent"
-                    android:hint="Radius of interest"
+                    android:hint="Radius of interest (meters)"
                     android:inputType="number"
                     android:maxLength="10"
                     android:maxLines="1"
                     android:paddingLeft="17dp"
                     android:paddingTop="15dp"
                     android:paddingBottom="15dp"
+                    android:paddingRight="17dp"
                     android:textCursorDrawable="@drawable/cursor_color"
                     android:textSize="12sp" />
 
@@ -223,7 +246,7 @@
                     android:layout_height="10.3dp"
                     android:layout_centerVertical="true"
                     android:layout_marginLeft="17dp"
-                    android:src="@drawable/radius" />
+                    android:src="@drawable/ic_radius" />
 
             </RelativeLayout>
 
@@ -236,8 +259,8 @@
                 android:background="@drawable/blue_border_rounded_cornwe">
 
                 <!-- INPUT -->
-                <customfonts.EditText_Poppins_Regular
-                    android:id="@+id/location_input"
+                <app.responsability.component.LocationAutoCompleteTextView
+                    android:id="@+id/etLocation"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_toRightOf="@+id/location_icon"
@@ -248,6 +271,7 @@
                     android:paddingLeft="17dp"
                     android:paddingTop="15dp"
                     android:paddingBottom="15dp"
+                    android:paddingRight="17dp"
                     android:textCursorDrawable="@drawable/cursor_color"
                     android:textSize="12sp" />
 
@@ -258,75 +282,68 @@
                     android:layout_height="10.3dp"
                     android:layout_centerVertical="true"
                     android:layout_marginLeft="17dp"
-                    android:src="@drawable/location" />
+                    android:src="@drawable/ic_location" />
 
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="62dp"
-                android:layout_marginTop="12.7dp"
-                android:layout_marginRight="62dp"
-                android:background="@drawable/blue_border_rounded_cornwe">
-
-                <!-- INPUT -->
-                <customfonts.EditText_Poppins_Regular
-                    android:id="@+id/password_input"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_toRightOf="@+id/icon"
-                    android:background="@android:color/transparent"
-                    android:hint="Password"
-                    android:inputType="textPassword"
-                    android:maxLength="10"
-                    android:maxLines="1"
-                    android:paddingLeft="17dp"
-                    android:paddingTop="15dp"
-                    android:paddingBottom="15dp"
-                    android:textCursorDrawable="@drawable/cursor_color"
-                    android:textSize="12sp" />
-
-                <!-- ICON -->
-                <ImageView
-                    android:id="@+id/icon"
-                    android:layout_width="14.7dp"
-                    android:layout_height="10.3dp"
+                <ProgressBar
+                    android:id="@+id/locationProgressBar"
+                    style="?android:attr/progressBarStyleSmall"
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:layout_alignParentRight="true"
                     android:layout_centerVertical="true"
-                    android:layout_marginLeft="17dp"
-                    android:src="@drawable/password" />
+                    android:layout_marginRight="17dp"
+                    android:visibility="gone"/>
 
             </RelativeLayout>
 
-            <customfonts.MyTextView_Poppins_Medium
-                android:id="@+id/login"
+            <customfonts.Button_Poppins_Regular
+                android:id="@+id/btnRegister"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginLeft="62dp"
                 android:layout_marginTop="18.7dp"
                 android:layout_marginRight="62dp"
-                android:background="@drawable/blue_fill__rounded_color"
+                android:background="@drawable/btn_style"
                 android:gravity="center"
                 android:paddingTop="14dp"
                 android:paddingBottom="14dp"
                 android:text="Register"
-                android:textColor="#ffffff"
+                android:textColor="@drawable/btn_text_color"
                 android:textSize="12sp" />
 
-            <customfonts.MyTextView_Poppins_Medium
-                android:id="@+id/forgot_password"
+            <ProgressBar
+                android:visibility="gone"
+                android:id="@+id/regProgressBar"
+                android:progressDrawable="@drawable/circular_progress_bar"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginTop="12dp"
-                android:paddingBottom="20dp"
-                android:text="Already have an account ?"
-                android:textColor="#1566e0"
-                android:textSize="10.5sp" />
+                android:layout_marginTop="18.7dp"
+                android:layout_gravity="center"/>
 
+            <customfonts.MyTextView_Poppins_Medium
+                android:visibility="gone"
+                android:id="@+id/regTvInfo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="12sp"
+                android:textColor="@color/yesGreen"
+                android:layout_marginTop="12dp"
+                android:layout_gravity="center"
+                android:text="You have registered successfully" />
+
+            <customfonts.MyTextView_Poppins_Medium
+                android:id="@+id/toLogin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="10.5sp"
+                android:textColor="#1566e0"
+                android:layout_marginTop="6dp"
+                android:paddingTop="6dp"
+                android:paddingBottom="6dp"
+                android:layout_marginBottom="24dp"
+                android:layout_gravity="center"
+                android:text="@string/toLogin" />
 
         </LinearLayout>
-
-    </ScrollView>
-</RelativeLayout>
+</ScrollView>

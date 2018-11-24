@@ -1,8 +1,6 @@
 package app.responsability.services.google;
 
-import java.util.List;
-
-import app.responsability.models.LocationSearchResult;
+import app.responsability.models.component.LocationSearchResult;
 import retrofit2.Call;
 import retrofit2.http.GET;
 import retrofit2.http.Query;

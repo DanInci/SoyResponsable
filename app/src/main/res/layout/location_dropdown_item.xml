@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="62dp"
+    android:layout_marginRight="62dp">
+
+    <TextView
+        android:id="@+id/name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="17dp"
+        android:layout_marginRight="17dp"
+        android:layout_marginTop="5dp"
+        android:text="Arad"
+        android:layout_marginBottom="2dp"
+        android:textColor="#1566e0"
+        android:textSize="12sp"
+        android:textAppearance="?android:attr/textAppearanceLargePopupMenu" />
+
+    <TextView
+        android:id="@+id/coordinates"
+        android:layout_below="@id/name"
+        android:layout_marginLeft="17dp"
+        android:layout_marginRight="17dp"
+        android:text="(2131.23, 3232.23)"
+        android:layout_marginBottom="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textColor="@android:color/darker_gray"
+        android:textSize="9sp" />
+
+    <FrameLayout
+        android:layout_below="@id/coordinates"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@android:color/darker_gray">
+    </FrameLayout>
+
+
+</RelativeLayout>

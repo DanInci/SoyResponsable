@@ -9,11 +9,13 @@ public class UserProfile implements Serializable {
 
     private String name;
 
-    private String age;
+    private Integer age;
 
     private Sex sex;
 
     private String profilePic;
+
+    private String locationName;
 
     private Double latitude;
 
@@ -23,11 +25,12 @@ public class UserProfile implements Serializable {
 
     public UserProfile() {}
 
-    public UserProfile(String name, String age, Sex sex, String profilePic, Double latitude, Double longitude, Double radius) {
+    public UserProfile(String name, Integer age, Sex sex, String profilePic, String locationName, Double latitude, Double longitude, Double radius) {
         this.name = name;
         this.age = age;
         this.sex = sex;
         this.profilePic = profilePic;
+        this.locationName = locationName;
         this.latitude = latitude;
         this.longitude = longitude;
         this.radius = radius;
@@ -41,11 +44,11 @@ public class UserProfile implements Serializable {
         this.name = name;
     }
 
-    public String getAge() {
+    public Integer getAge() {
         return age;
     }
 
-    public void setAge(String age) {
+    public void setAge(Integer age) {
         this.age = age;
     }
 
@@ -63,6 +66,14 @@ public class UserProfile implements Serializable {
 
     public void setProfilePic(String profilePic) {
         this.profilePic = profilePic;
+    }
+
+    public String getLocationName() {
+        return locationName;
+    }
+
+    public void setLocationName(String locationName) {
+        this.locationName = locationName;
     }
 
     public Double getLatitude() {

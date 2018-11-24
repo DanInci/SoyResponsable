@@ -6,15 +6,17 @@ public class UserReg {
 
     private String email;
 
-    private String pass;
+    private String password;
 
     private String profilePic;
 
     private String name;
 
-    private String age;
+    private Integer age;
 
     private Sex sex;
+
+    private String locationName;
 
     private Double latitude;
 
@@ -24,13 +26,14 @@ public class UserReg {
 
     public UserReg() {}
 
-    public UserReg(String email, String pass, String profilePic, String name, String age, Sex sex, Double latitude, Double longitude, Double radius) {
+    public UserReg(String email, String password, String profilePic, String name, Integer age, Sex sex, String locationName, Double latitude, Double longitude, Double radius) {
         this.email = email;
-        this.pass = pass;
+        this.password = password;
         this.profilePic = profilePic;
         this.name = name;
         this.age = age;
         this.sex = sex;
+        this.locationName = locationName;
         this.latitude = latitude;
         this.longitude = longitude;
         this.radius = radius;
@@ -44,12 +47,12 @@ public class UserReg {
         this.email = email;
     }
 
-    public String getPass() {
-        return pass;
+    public String getPassword() {
+        return password;
     }
 
-    public void setPass(String pass) {
-        this.pass = pass;
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     public String getProfilePic() {
@@ -68,11 +71,11 @@ public class UserReg {
         this.name = name;
     }
 
-    public String getAge() {
+    public Integer getAge() {
         return age;
     }
 
-    public void setAge(String age) {
+    public void setAge(Integer age) {
         this.age = age;
     }
 
@@ -82,6 +85,14 @@ public class UserReg {
 
     public void setSex(Sex sex) {
         this.sex = sex;
+    }
+
+    public String getLocationName() {
+        return locationName;
+    }
+
+    public void setLocationName(String locationName) {
+        this.locationName = locationName;
     }
 
     public Double getLatitude() {

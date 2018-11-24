@@ -5,6 +5,6 @@
     android:layout_height="wrap_content"
     android:layout_width="match_parent"
     android:fontFamily="fonts/Poppins-Regular.ttf"
-    android:textSize="14sp"
+    android:textSize="12sp"
     android:ellipsize="marquee"
     android:singleLine="true" />
