@@ -19,6 +19,7 @@
         completions."
     </string>
     <string name="upload">Upload</string>
+    <string name="upload_picture">Upload Picture</string>
     <string name="register">Register ?</string>
     <string name="forgot_password">Forgot password ?</string>
     <string name="see_more_details"><u>See more details...</u></string>
@@ -39,6 +40,6 @@
     <string name="radius">Radius</string>
     <string name="longitude">Longitude</string>
     <string name="latitude">Latitude</string>
-
+    <string name="picture">Picture</string>
 
 </resources>

@@ -33,7 +33,7 @@
                     android:layout_marginTop="170dp"
                     android:background="@drawable/btn_reverse_style"
                     android:textColor="@drawable/btn_reverse_text_color"
-                    android:text="@string/upload" />
+                    android:text="@string/upload_picture" />
 
             </FrameLayout>
 

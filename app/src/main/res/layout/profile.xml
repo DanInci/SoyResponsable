@@ -16,7 +16,6 @@
         android:id="@+id/profile_image"
         android:layout_width="match_parent"
         android:layout_height="150dp"
-        android:contentDescription="@string/profile_picture"
         android:padding="3dp"/>
 
     <RelativeLayout
@@ -94,14 +93,7 @@
             android:layout_width="280dp"
             android:layout_height="wrap_content" />
 
-        <ImageButton
-            android:id="@+id/email_btn"
-            android:layout_width="16dp"
-            android:layout_height="16dp"
-            android:layout_margin="5dp"
-            android:background="@drawable/edit_button"
-            android:layout_toRightOf="@id/email"
-            android:layout_alignBottom="@id/email"/>
+
     </RelativeLayout>
 
     <RelativeLayout
@@ -181,7 +173,7 @@
             android:layout_height="wrap_content" />
 
         <ImageButton
-            android:id="@+id/age_btn"
+            android:id="@+id/radius_btn"
             android:layout_width="16dp"
             android:layout_height="16dp"
             android:layout_margin="5dp"
