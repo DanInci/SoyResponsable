@@ -32,6 +32,13 @@
     <string name="user">User</string>
     <string name="multiline_comment_example">Multiline comment example. Multiline comment example. Multiline comment example.Multiline comment example.Multiline comment example.</string>
     <string name="create_at">24.11.2018</string>
+    <string name="full_name">Full name</string>
+    <string name="email">Email</string>
+    <string name="profile_picture">Profile picture</string>
+    <string name="age">Age</string>
+    <string name="radius">Radius</string>
+    <string name="longitude">Longitude</string>
+    <string name="latitude">Latitude</string>
 
 
 </resources>
