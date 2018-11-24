@@ -32,6 +32,7 @@
             android:layout_height="wrap_content">
 
             <TextView
+                android:id="@+id/comment_user"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textAlignment="textStart"
@@ -43,6 +44,7 @@
                 android:hint="@string/user"/>
 
             <TextView
+                android:id="@+id/comment_description"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textAlignment="textStart"
@@ -54,6 +56,7 @@
                 android:textColor="@color/colorPrimaryDark"/>
 
             <TextView
+                android:id="@+id/comment_createdAt"
                 android:text="@string/create_at"
                 android:textAlignment="textEnd"
                 android:layout_gravity="end"
