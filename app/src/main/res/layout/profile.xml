@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/profile_view">
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/profile_view">
+
+    <ImageView
+        android:src="@drawable/avatar"
+        android:id="@+id/profile_image"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:contentDescription="@string/profile_picture"
+        android:padding="3dp"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="3dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp">
+
+        <TextView
+            android:id="@+id/name_txt"
+            android:layout_alignParentTop="true"
+            android:text="@string/full_name"
+            android:padding="5dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:textColor="@color/colorPrimary"
+            android:textSize="12sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <EditText
+            android:id="@+id/name"
+            android:text="@string/user"
+            android:padding="5dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginLeft="20dp"
+            android:inputType="textPersonName"
+            android:layout_below="@id/name_txt"
+            android:enabled="false"
+            android:textSize="12sp"
+            android:layout_width="280dp"
+            android:layout_height="wrap_content" />
+
+        <ImageButton
+            android:id="@+id/name_btn"
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:layout_margin="5dp"
+            android:background="@drawable/edit_button"
+            android:layout_toRightOf="@id/name"
+            android:layout_alignBottom="@id/name"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="3dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp">
+
+        <TextView
+            android:id="@+id/email_txt"
+            android:layout_alignParentTop="true"
+            android:text="@string/email"
+            android:padding="5dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:textColor="@color/colorPrimary"
+            android:textSize="12sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <EditText
+            android:id="@+id/email"
+            android:text="@string/email"
+            android:padding="5dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginLeft="20dp"
+            android:inputType="textEmailAddress"
+            android:layout_below="@id/email_txt"
+            android:enabled="false"
+            android:textSize="12sp"
+            android:layout_width="280dp"
+            android:layout_height="wrap_content" />
+
+        <ImageButton
+            android:id="@+id/email_btn"
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:layout_margin="5dp"
+            android:background="@drawable/edit_button"
+            android:layout_toRightOf="@id/email"
+            android:layout_alignBottom="@id/email"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="3dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp">
+
+        <TextView
+            android:id="@+id/age_txt"
+            android:layout_alignParentTop="true"
+            android:text="@string/age"
+            android:padding="5dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:textColor="@color/colorPrimary"
+            android:textSize="12sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <EditText
+            android:id="@+id/age"
+            android:text="@string/age"
+            android:padding="5dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginLeft="20dp"
+            android:inputType="number"
+            android:layout_below="@id/age_txt"
+            android:enabled="false"
+            android:textSize="12sp"
+            android:layout_width="280dp"
+            android:layout_height="wrap_content" />
+
+        <ImageButton
+            android:id="@+id/age_btn"
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:layout_margin="5dp"
+            android:background="@drawable/edit_button"
+            android:layout_toRightOf="@id/age"
+            android:layout_alignBottom="@id/age"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="3dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp">
+
+        <TextView
+            android:id="@+id/radius_txt"
+            android:layout_alignParentTop="true"
+            android:text="@string/radius"
+            android:padding="5dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:textColor="@color/colorPrimary"
+            android:textSize="12sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <EditText
+            android:id="@+id/radius"
+            android:text="@string/radius"
+            android:padding="5dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginLeft="20dp"
+            android:inputType="number"
+            android:layout_below="@id/radius_txt"
+            android:enabled="false"
+            android:textSize="12sp"
+            android:layout_width="280dp"
+            android:layout_height="wrap_content" />
+
+        <ImageButton
+            android:id="@+id/age_btn"
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:layout_margin="5dp"
+            android:background="@drawable/edit_button"
+            android:layout_toRightOf="@id/radius"
+            android:layout_alignBottom="@id/radius"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="3dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp">
+
+        <TextView
+            android:id="@+id/longitude_txt"
+            android:layout_alignParentTop="true"
+            android:text="@string/longitude"
+            android:padding="5dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:textColor="@color/colorPrimary"
+            android:textSize="12sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <EditText
+            android:id="@+id/longitude"
+            android:text="@string/longitude"
+            android:padding="5dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginLeft="20dp"
+            android:inputType="number"
+            android:layout_below="@id/longitude_txt"
+            android:enabled="false"
+            android:textSize="12sp"
+            android:layout_width="280dp"
+            android:layout_height="wrap_content" />
+
+        <ImageButton
+            android:id="@+id/longitude_btn"
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:layout_margin="5dp"
+            android:background="@drawable/edit_button"
+            android:layout_toRightOf="@id/longitude"
+            android:layout_alignBottom="@id/longitude"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="3dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp">
+
+        <TextView
+            android:id="@+id/latitude_txt"
+            android:layout_alignParentTop="true"
+            android:text="@string/latitude"
+            android:padding="5dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:textColor="@color/colorPrimary"
+            android:textSize="12sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <EditText
+            android:id="@+id/latitude"
+            android:text="@string/latitude"
+            android:padding="5dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginLeft="20dp"
+            android:inputType="number"
+            android:layout_below="@id/latitude_txt"
+            android:enabled="false"
+            android:textSize="12sp"
+            android:layout_width="280dp"
+            android:layout_height="wrap_content" />
+
+        <ImageButton
+            android:id="@+id/latitude_btn"
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:layout_margin="5dp"
+            android:background="@drawable/edit_button"
+            android:layout_toRightOf="@id/latitude"
+            android:layout_alignBottom="@id/latitude"/>
+    </RelativeLayout>
+
+</LinearLayout>
+</ScrollView>
