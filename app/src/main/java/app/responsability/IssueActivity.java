@@ -114,7 +114,7 @@ public class IssueActivity extends AppCompatActivity {
                 }else{
                     Comment comment = new Comment();
                     comment.setContent(comment_input.getText().toString());
-                    Call<Long> call = ServiceManager.getCommentsService().createComment( Long.parseLong(issueId), comment);
+                    Call<Long> call = ServiceManager.getCommentsService().createComment(Long.parseLong(issueId), comment);
                     call.enqueue(commentCallback);
                 }
             }
