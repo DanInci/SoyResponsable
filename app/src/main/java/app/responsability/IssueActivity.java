@@ -26,7 +26,6 @@ import java.util.List;
 
 public class IssueActivity extends AppCompatActivity {
 
-    private Issue issue;
     private List<Comment> commentList;
     private TextView title;
     private EditText comment_input;
@@ -43,10 +42,6 @@ public class IssueActivity extends AppCompatActivity {
         @Override
         public void onResponse(Call<Long> call, Response<Long> response) {
             if (response.isSuccessful()){
-                Long id = response.body();
-                commentList = issue.getComments();
-                adapter = new CommentAdapter(commentList);
-                recyclerViewComments.setAdapter(adapter);
             }
             else{
                 Toast.makeText(getApplicationContext(),"Comment not posted!", Toast.LENGTH_SHORT).show();
@@ -114,7 +109,7 @@ public class IssueActivity extends AppCompatActivity {
                 }else{
                     Comment comment = new Comment();
                     comment.setContent(comment_input.getText().toString());
-                    Call<Long> call = ServiceManager.getCommentsService().createComment( Long.parseLong(issueId), comment);
+                    Call<Long> call = ServiceManager.getCommentsService().createComment(Long.parseLong(issueId), comment);
                     call.enqueue(commentCallback);
                 }
             }

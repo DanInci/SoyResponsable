@@ -1,5 +1,8 @@
 package app.responsability.fragments;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
+import android.media.Image;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
@@ -7,12 +10,14 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import java.util.List;
 
 import app.responsability.Adapter.IssueAdapter;
 import app.responsability.services.ServiceManager;
+import customfonts.Button_Poppins_Regular;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -27,6 +32,7 @@ public class ListFragment extends Fragment {
     private List<Issue> issueList;
     private RecyclerView recyclerViewIssues;
     private TextView noneIssues;
+    private Button_Poppins_Regular addIssue;
 
     private Callback<List<Issue>> issueCallback = new Callback<List<Issue>>() {
 
@@ -89,9 +95,18 @@ public class ListFragment extends Fragment {
         recyclerViewIssues = (RecyclerView) view.findViewById(R.id.issues_list);
 
         noneIssues = (TextView) view.findViewById(R.id.noneIssues);
-
+        addIssue = (Button_Poppins_Regular) view.findViewById(R.id.addIssue);
+        addIssue.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                IssueDialogFragment dialog = new IssueDialogFragment();
+                dialog.show(getFragmentManager(), "Add issue");
+            }
+        });
         Call<List<Issue>> call = ServiceManager.getIssuesService().getIssues(45.74940, 21.22720, 20000.0);
         call.enqueue(issueCallback);
+
+
 
         return view;
     }

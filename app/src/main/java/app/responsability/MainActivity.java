@@ -177,9 +177,9 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
         }
     }
 
+
     @Override
-    public void onConnectionSuspended(int i) {
-    }
+    public void onConnectionSuspended(int i) { }
 
     @Override
     public void onConnectionFailed(ConnectionResult connectionResult) {

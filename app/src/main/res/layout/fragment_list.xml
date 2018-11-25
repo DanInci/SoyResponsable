@@ -4,15 +4,41 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".fragments.ListFragment">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+
+    <customfonts.Button_Poppins_Regular
+        android:id="@+id/addIssue"
+        android:layout_width="wrap_content"
+        android:layout_height="25dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerInParent="true"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/btn_reverse_style"
+        android:textColor="@drawable/btn_reverse_text_color"
+        android:text="ADD" />
 
     <TextView
         android:id="@+id/noneIssues"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_below="@id/addIssue"
         android:textAlignment="center"
         android:layout_margin="10dp"
         android:text="@string/hello_blank_fragment" />
 
-    <include layout="@layout/issue_list_view"/>
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/issues_list"
+            android:layout_marginTop="10dp"
+            android:layout_below="@id/addIssue"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/issue_list_view"
+            tools:layout_editor_absoluteX="8dp"
+            tools:layout_editor_absoluteY="8dp" />
+    </RelativeLayout>
 
 </FrameLayout>
