@@ -55,6 +55,9 @@
         <activity
             android:name=".LoginActivity"
             android:theme="@style/AppTheme.NoActionBar.FullScreen" />
+        <activity
+            android:name=".IssueActivity"
+            android:theme="@style/AppTheme.NoActionBar.FullScreen"></activity>
     </application>
 
 </manifest>

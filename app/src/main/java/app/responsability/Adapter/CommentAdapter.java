@@ -2,18 +2,24 @@ package app.responsability.Adapter;
 
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.media.Image;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
 import app.responsability.R;
 import app.responsability.models.Comment;
+import app.responsability.services.ServiceManager;
+import retrofit2.Call;
 
 public class CommentAdapter extends RecyclerView.Adapter<CommentAdapter.ViewHolder> {
     private List<Comment> commentList;
@@ -33,12 +39,20 @@ public class CommentAdapter extends RecyclerView.Adapter<CommentAdapter.ViewHold
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder viewHolder, int i) {
-        Comment comment = commentList.get(i);
+        final Comment comment = commentList.get(i);
         viewHolder.createdAt.setText(comment.getCreatedAt().toString());
         viewHolder.user.setText(comment.getCommentedByUser().getName());
         viewHolder.description.setText(comment.getContent());
-        Bitmap bm = BitmapFactory.decodeFile(comment.getCommentedByUser().getProfilePic());
-        viewHolder.imageView.setImageBitmap(bm);
+        Picasso.get().load(comment.getCommentedByUser().getProfilePic()).into(viewHolder.imageView);
+
+//        viewHolder.delete.setVisibility(View.VISIBLE);
+//        viewHolder.delete.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Call<Long> call = ServiceManager.getCommentsService().deleteCommentById(comment.getId());
+//                call.enqueue(commentCallback);
+//            }
+//        });
     }
 
     @Override
@@ -49,6 +63,7 @@ public class CommentAdapter extends RecyclerView.Adapter<CommentAdapter.ViewHold
     public static class ViewHolder extends RecyclerView.ViewHolder{
         public ImageView imageView;
         public TextView user, description, createdAt;
+        public ImageButton delete;
 
         public ViewHolder(View v){
             super(v);
@@ -56,6 +71,7 @@ public class CommentAdapter extends RecyclerView.Adapter<CommentAdapter.ViewHold
             user = (TextView) v.findViewById(R.id.comment_user);
             description = (TextView) v.findViewById(R.id.comment_description);
             createdAt = (TextView) v.findViewById(R.id.comment_createdAt);
+            delete = (ImageButton) v.findViewById(R.id.delete_comment);
         }
 
     }
