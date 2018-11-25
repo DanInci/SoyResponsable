@@ -14,9 +14,9 @@ public class Issue implements Serializable {
 
     private String picture;
 
-    private String latitude;
+    private Double latitude;
 
-    private String longitude;
+    private Double longitude;
 
     private Boolean hasBeenUpvoted;
 
@@ -36,7 +36,7 @@ public class Issue implements Serializable {
 
     public Issue() {}
 
-    public Issue(String title, String description, String picture, String latitude, String longitude) {
+    public Issue(String title, String description, String picture, Double latitude, Double longitude) {
         this.title = title;
         this.description = description;
         this.picture = picture;
@@ -76,19 +76,19 @@ public class Issue implements Serializable {
         this.picture = picture;
     }
 
-    public String getLatitude() {
+    public Double getLatitude() {
         return latitude;
     }
 
-    public void setLatitude(String latitude) {
+    public void setLatitude(Double latitude) {
         this.latitude = latitude;
     }
 
-    public String getLongitude() {
+    public Double getLongitude() {
         return longitude;
     }
 
-    public void setLongitude(String longitude) {
+    public void setLongitude(Double longitude) {
         this.longitude = longitude;
     }
 

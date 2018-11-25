@@ -12,7 +12,6 @@ import android.support.v4.app.DialogFragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import app.responsability.R;
@@ -76,7 +75,7 @@ public class IssueDialogFragment extends DialogFragment {
                     Toast.makeText(getContext(), "Select an image!", Toast.LENGTH_SHORT).show();
                 }
                 else {
-                    Issue issue = new Issue(title.getText().toString(), description.getText().toString(), selectedImage.toString(), "21321.21", "3734.23");
+                    Issue issue = new Issue(title.getText().toString(), description.getText().toString(), selectedImage.toString(), 21321.21, 3734.23);
                     Call<Long> call = ServiceManager.getIssuesService().createIssue(issue);
                     call.enqueue(issueCallback);
                 }

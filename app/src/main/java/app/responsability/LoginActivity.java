@@ -10,6 +10,7 @@ import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Base64;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -17,8 +18,22 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.Spinner;
+import android.widget.Toast;
+
+import com.facebook.CallbackManager;
+import com.facebook.FacebookCallback;
+import com.facebook.FacebookException;
+import com.facebook.GraphRequest;
+import com.facebook.GraphResponse;
+import com.facebook.login.LoginResult;
+import com.facebook.login.widget.LoginButton;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.io.ByteArrayOutputStream;
+import java.util.Arrays;
+import java.util.Collections;
 
 import app.responsability.component.LocationAutoCompleteTextView;
 import app.responsability.component.LocationListAdapter;
@@ -61,6 +76,9 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     private MyTextView_Poppins_Medium toRegister;
     private ProgressBar regProgressBar;
     private MyTextView_Poppins_Medium regTvInfo;
+
+    private LoginButton btnFbLogin;
+    private CallbackManager callbackManager;
 
     private Callback<UserProfile> loginCallback = new Callback<UserProfile>() {
         @Override
@@ -117,6 +135,39 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         }
     };
 
+    private FacebookCallback<LoginResult> facebookCallback = new FacebookCallback<LoginResult>() {
+        @Override
+        public void onSuccess(LoginResult loginResult) {
+            GraphRequest request = GraphRequest.newMeRequest(
+                    loginResult.getAccessToken(),
+                    new GraphRequest.GraphJSONObjectCallback() {
+                        @Override
+                        public void onCompleted(JSONObject object, GraphResponse response) {
+                            try {
+                                String id = object.getString("id");
+                                String name = object.getString("name");
+                                String email = object.getString("email");
+                                String birthday = object.getString("birthday"); // 01/31/1980 format
+                            } catch (JSONException e) {}
+                        }
+                    });
+            Bundle parameters = new Bundle();
+            parameters.putString("fields", "id,name,email,gender,birthday,picture");
+            request.setParameters(parameters);
+            request.executeAsync();
+        }
+
+        @Override
+        public void onCancel() {
+            Log.d(AppSoyResponsable.SOY_RESPONSABLE, "Login with facebook was canceled");
+        }
+
+        @Override
+        public void onError(FacebookException error) {
+            Log.e(AppSoyResponsable.SOY_RESPONSABLE, "Failed to log in with facebook");
+        }
+    };
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -166,6 +217,11 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         regProgressBar = findViewById(R.id.regProgressBar);
         regTvInfo = findViewById(R.id.regTvInfo);
 
+        callbackManager = CallbackManager.Factory.create();
+        btnFbLogin = findViewById(R.id.fbLoginButton);
+        btnFbLogin.setReadPermissions(Arrays.asList("email", "public_profile", "user_photos"));
+        btnFbLogin.registerCallback(callbackManager, facebookCallback);
+
         switchLayoutViews(false);
     }
 
@@ -205,6 +261,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 isProfileChanged = true;
             }
         }
+        callbackManager.onActivityResult(requestCode, resultCode, data);
     }
 
     private void switchLayoutViews(boolean isRegisterLayout) {
