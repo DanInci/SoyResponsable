@@ -72,7 +72,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 UserProfile profile = response.body();
                 Location loc = new Location(profile.getName(), profile.getLatitude(), profile.getLongitude());
                 AppSoyResponsable.saveSession(ServiceManager.currentEmail, ServiceManager.currentPassword, loc);
-                AppSoyResponsable.setLoggedIn(loc);
+                AppSoyResponsable.setLoggedIn(profile);
                 finish();
             }
             else {
@@ -221,8 +221,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     }
 
     private void setupLoadingSpinner() {
-        String[] genders = {"Male", "Female"};
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(getApplicationContext(), R.layout.spinner_item, genders);
+        ArrayAdapter<Sex> adapter = new ArrayAdapter<>(getApplicationContext(), R.layout.spinner_item, Sex.values());
         sexSpinner.setAdapter(adapter);
     }
 
@@ -377,7 +376,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         String email = etRegEmail.getText().toString();
         String pass = etRegPass.getText().toString();
         Integer age = Integer.valueOf(etAge.getText().toString());
-        Sex sex = Sex.getSexByStr(sexSpinner.getSelectedItem().toString());
+        Sex sex = (Sex) sexSpinner.getSelectedItem();
         String locationName = etLocation.getSelectedLocation().getName();
         Double lat = etLocation.getSelectedLocation().getLat();
         Double lng = etLocation.getSelectedLocation().getLng();

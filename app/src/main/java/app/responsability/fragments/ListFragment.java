@@ -10,8 +10,7 @@ import app.responsability.R;
 
 public class ListFragment extends Fragment {
 
-    public ListFragment() {
-    }
+    public ListFragment() { }
 
     public static ListFragment newInstance() {
         ListFragment fragment = new ListFragment();

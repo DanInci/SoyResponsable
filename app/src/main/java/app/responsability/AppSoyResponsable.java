@@ -5,6 +5,7 @@ import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
 
 import app.responsability.models.Location;
+import app.responsability.models.UserProfile;
 import app.responsability.services.ServiceManager;
 
 public class AppSoyResponsable extends Application {
@@ -22,8 +23,8 @@ public class AppSoyResponsable extends Application {
 
     private static Application appContext;
 
-    public static boolean isLoggedIn = false;
-    public static Location currentLocationPreference = CURRENT_LOCATION;
+    public static boolean isLoggedIn;
+    public static UserProfile loggedInUser;
 
     @Override
     public void onCreate() {
@@ -41,9 +42,12 @@ public class AppSoyResponsable extends Application {
         String savedLocationLng = pref.getString(SAVED_LOCATION_LNG, NOT_FOUND);
         if(!savedEmail.equals(NOT_FOUND) && !savedPassword.equals(NOT_FOUND) &&
                 !savedLocationName.equals(NOT_FOUND) && !savedLocationLat.equals(NOT_FOUND) && !savedLocationLng.equals(NOT_FOUND)) {
-            Location loc = new Location(savedLocationName, Double.valueOf(savedLocationLat), Double.valueOf(savedLocationLng));
             ServiceManager.createSession(savedEmail, savedPassword);
-            setLoggedIn(loc);
+            UserProfile user = new UserProfile();
+            user.setLocationName(savedLocationName);
+            user.setLatitude(Double.valueOf(savedLocationLat));
+            user.setLongitude(Double.valueOf(savedLocationLng));
+            setLoggedIn(user);
         }
     }
 
@@ -58,13 +62,24 @@ public class AppSoyResponsable extends Application {
         editor.apply();
     }
 
-    public static void setLoggedIn(Location userLocation) {
+    public static void deleteSession() {
+        SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences(appContext);
+        SharedPreferences.Editor editor = pref.edit();
+        editor.remove(SAVED_EMAIL);
+        editor.remove(SAVED_PASSWORD);
+        editor.remove(SAVED_LOCATION_NAME);
+        editor.remove(SAVED_LOCATION_LAT);
+        editor.remove(SAVED_LOCATION_LAT);
+        editor.apply();
+    }
+
+    public static void setLoggedIn(UserProfile user) {
         isLoggedIn = true;
-        currentLocationPreference = userLocation;
+        loggedInUser = user;
     }
 
     public static void setLoggedOut() {
         isLoggedIn = false;
-        currentLocationPreference = CURRENT_LOCATION;
+        loggedInUser = null;
     }
 }

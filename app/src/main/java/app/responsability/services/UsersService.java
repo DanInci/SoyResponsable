@@ -18,6 +18,6 @@ public interface UsersService {
     Call<UserProfile> getUserProfile();
 
     @PUT("/user/{userId}")
-    Call<Long> updateUserProfile(@Path("userId") Long id, UserProfile userProfile);
+    Call<Long> updateUserProfile(@Path("userId") Long id, @Body UserProfile userProfile);
 
 }

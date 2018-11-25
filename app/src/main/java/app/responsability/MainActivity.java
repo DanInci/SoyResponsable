@@ -1,6 +1,7 @@
 package app.responsability;
 
 
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.os.Bundle;
@@ -45,8 +46,14 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()) {
             case R.id.navigation_profile:
-                fm.beginTransaction().replace(R.id.frame_layout, profileFragment).commit();
-                return true;
+                if(!AppSoyResponsable.isLoggedIn)  {
+                    Intent intent = new Intent(this, LoginActivity.class);
+                    startActivity(intent);
+                    return false;
+                } else {
+                    fm.beginTransaction().replace(R.id.frame_layout, profileFragment).commit();
+                    return true;
+                }
             case R.id.navigation_map:
                 fm.beginTransaction().replace(R.id.frame_layout, mapFragment).commit();
                 return true;

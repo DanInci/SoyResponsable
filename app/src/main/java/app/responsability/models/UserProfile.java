@@ -7,7 +7,11 @@ import app.responsability.services.UsersService;
 
 public class UserProfile implements Serializable {
 
+    private Long id;
+
     private String name;
+
+    private String email;
 
     private Integer age;
 
@@ -25,8 +29,10 @@ public class UserProfile implements Serializable {
 
     public UserProfile() {}
 
-    public UserProfile(String name, Integer age, Sex sex, String profilePic, String locationName, Double latitude, Double longitude, Double radius) {
+    public UserProfile(Long id, String name, String email, Integer age, Sex sex, String profilePic, String locationName, Double latitude, Double longitude, Double radius) {
+        this.id = id;
         this.name = name;
+        this.email = email;
         this.age = age;
         this.sex = sex;
         this.profilePic = profilePic;
@@ -36,12 +42,28 @@ public class UserProfile implements Serializable {
         this.radius = radius;
     }
 
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
     public String getName() {
         return name;
     }
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public Integer getAge() {
