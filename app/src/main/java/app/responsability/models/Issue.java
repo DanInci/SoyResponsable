@@ -1,7 +1,7 @@
 package app.responsability.models;
 
 import java.io.Serializable;
-import java.time.LocalDateTime;
+import java.util.Date;
 import java.util.List;
 
 public class Issue implements Serializable {
@@ -32,7 +32,7 @@ public class Issue implements Serializable {
 
     private Boolean isArchived;
 
-    private LocalDateTime createdAt;
+    private Date createdAt;
 
     public Issue() {}
 
@@ -148,11 +148,11 @@ public class Issue implements Serializable {
         isArchived = archived;
     }
 
-    public LocalDateTime getCreatedAt() {
+    public Date getCreatedAt() {
         return createdAt;
     }
 
-    public void setCreatedAt(LocalDateTime createdAt) {
+    public void setCreatedAt(Date createdAt) {
         this.createdAt = createdAt;
     }
 }

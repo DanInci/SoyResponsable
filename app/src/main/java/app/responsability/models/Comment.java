@@ -1,7 +1,7 @@
 package app.responsability.models;
 
 import java.io.Serializable;
-import java.time.LocalDateTime;
+import java.util.Date;
 
 public class Comment implements Serializable {
 
@@ -11,13 +11,13 @@ public class Comment implements Serializable {
 
     private UserProfile commentedByUser;
 
-    private LocalDateTime createdAt;
+    private Date createdAt;
 
-    private LocalDateTime editedAt;
+    private Date editedAt;
 
     public Comment() {}
 
-    public Comment(Long id, String content, UserProfile commentedByUser, LocalDateTime createdAt, LocalDateTime editedAt) {
+    public Comment(Long id, String content, UserProfile commentedByUser, Date createdAt, Date editedAt) {
         this.id = id;
         this.content = content;
         this.commentedByUser = commentedByUser;
@@ -49,19 +49,19 @@ public class Comment implements Serializable {
         this.commentedByUser = commentedByUser;
     }
 
-    public LocalDateTime getCreatedAt() {
+    public Date getCreatedAt() {
         return createdAt;
     }
 
-    public void setCreatedAt(LocalDateTime createdAt) {
+    public void setCreatedAt(Date createdAt) {
         this.createdAt = createdAt;
     }
 
-    public LocalDateTime getEditedAt() {
+    public Date getEditedAt() {
         return editedAt;
     }
 
-    public void setEditedAt(LocalDateTime editedAt) {
+    public void setEditedAt(Date editedAt) {
         this.editedAt = editedAt;
     }
 }
