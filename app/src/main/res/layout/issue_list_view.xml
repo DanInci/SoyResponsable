@@ -9,6 +9,7 @@
         android:id="@+id/issues_list"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+
         android:background="@drawable/issue_list_view"
         tools:layout_editor_absoluteX="8dp"
         tools:layout_editor_absoluteY="8dp" />
