@@ -12,8 +12,8 @@
 
         <ImageView
             android:id="@+id/profile_image"
-            android:layout_width="48dp"
-            android:layout_height="48dp"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
             android:layout_centerVertical="true"
             android:layout_marginStart="15dp"
             android:layout_marginLeft="15dp"
@@ -70,6 +70,7 @@
         </LinearLayout>
 
         <ImageButton
+            android:id="@+id/delete_comment"
             android:layout_marginTop="10dp"
             android:layout_marginRight="10dp"
             android:layout_alignParentTop="true"
