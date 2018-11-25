@@ -39,10 +39,12 @@
     <string name="radius">Radius</string>
     <string name="longitude">Longitude</string>
     <string name="latitude">Latitude</string>
-
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">There are none issues</string>
     <string name="title_activity_maps">Map</string>
+
+    <string name="facebook_app_id">2126858534065258</string>
+    <string name="fb_login_protocol_scheme">fb2126858534065258</string>
+    <string name="google_maps_key" templateMergeStrategy="preserve" translatable="false">AIzaSyCcUEUaMQL0_6tvsTyPjwMc_gxeaDnAbjY</string>
 
 
 </resources>
